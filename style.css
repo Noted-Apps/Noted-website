@@ -192,15 +192,9 @@ p {
 
 .hero-image {
     width: 100%;
-    max-width: 450px;
+    max-width: 600px;
     border-radius: 12px;
     margin-bottom: 25px;
-    
-    /* Configurações temporárias caso a imagem não exista ainda */
-    background-color: var(--cor-secundaria);
-    aspect-ratio: 16/10;
-    object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 /* Seção Mobile */
