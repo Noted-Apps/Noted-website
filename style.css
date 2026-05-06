@@ -73,13 +73,11 @@ header {
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     min-height: calc(100vh - 110px); 
-    max-width: 800px;
+    max-width: 1000px; /* Aumentamos para caber as duas colunas com folga */
     margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+    padding: 40px 20px;
 }
 
 h1 {
@@ -127,12 +125,96 @@ p {
     /* background-color: var(--cor-secundaria-hover); */
 }
 
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 2.2rem;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+    color: var(--cor-texto-secundario);
+}
+
+/* Lista de Diferenciais */
+.diferenciais-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.diferenciais-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    color: var(--cor-texto-secundario);
+}
+
+/* Criando o checkmark verde dinamicamente */
+.diferenciais-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.diferenciais-list strong {
+    color: var(--cor-texto); /* Destaca a palavra-chave com a cor do texto principal */
+}
+
+/* Coluna da Imagem e Botão */
+.hero-media {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    
+    /* Configurações temporárias caso a imagem não exista ainda */
+    background-color: var(--cor-secundaria);
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
 /* Seção Mobile */
 .mobile-section {
-    margin-top: 30px;
-    padding-top: 25px;
+    margin-top: 60px; /* Um respiro um pouco maior para separar da área de cima */
+    padding-top: 40px;
     border-top: 1px solid var(--cor-borda);
     width: 100%;
+    
+    /* Regras novas para centralizar tudo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .mobile-section h2 {
@@ -180,14 +262,29 @@ footer a:hover {
 }
 
 /* Ajustes Mobile */
-@media (max-width: 480px) {
-    h1 { font-size: 1.8rem; }
-    main { padding: 40px 20px; }
-    footer { height: auto; padding: 10px 5%; flex-direction: column; }
+@media (max-width: 768px) {
+    main { padding: 30px 20px; }
     
-    .footer-logo {
-        margin-bottom: 8px; /* Dá um respiro entre a imagem e o email no celular */
+    .hero-section {
+        flex-direction: column; /* Empilha as colunas */
+        text-align: center;
+        gap: 30px;
     }
+
+    .hero-text {
+        text-align: center; /* Centraliza o texto no celular */
+    }
+
+    /* Ajusta a lista para ficar mais centralizada visualmente no celular */
+    .diferenciais-list {
+        text-align: left;
+        display: inline-block;
+    }
+
+    h1 { font-size: 1.9rem; }
     
+    /* Footer empilhado */
+    footer { height: auto; padding: 10px 5%; flex-direction: column; }
+    .footer-logo { margin-bottom: 8px; }
     body { padding-bottom: 80px; }
 }
