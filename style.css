@@ -197,9 +197,16 @@ p {
     margin-bottom: 25px;
 }
 
+.alerta-teste {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 15px;
+    text-align: center;
+}
+
 /* Seção Mobile */
 .mobile-section {
-    margin-top: 60px; /* Um respiro um pouco maior para separar da área de cima */
+    margin-top: 36px; /* Um respiro um pouco maior para separar da área de cima */
     padding-top: 40px;
     border-top: 1px solid var(--cor-borda);
     width: 100%;
